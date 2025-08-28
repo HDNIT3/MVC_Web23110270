@@ -86,11 +86,11 @@ public class LoginController extends HttpServlet {
 		}
 
 	}
-	private void saveRemeberMe(HttpServletResponse response, String username){
-			 Cookie cookie = new Cookie("username",username);
-			 cookie.setMaxAge(30*60);
-			 response.addCookie(cookie);
-	}
 
+	private void saveRemeberMe(HttpServletResponse response, String username) {
+		Cookie cookie = new Cookie("username", username);
+		cookie.setMaxAge(30 * 60);
+		response.addCookie(cookie);
+	}
 
 }
