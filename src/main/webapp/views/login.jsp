@@ -11,7 +11,6 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-	<h2>Tạo tài khoản mới</h2>
 	<c:if test="${alert != null}">
 		<h3 class="alert alert-danger">${alert}</h3>
 	</c:if>
@@ -47,5 +46,10 @@
 	</form>
 
 	<p>Nếu bạn chưa có tài khoản trên hệ thống, hãy đăng ký</p>
+	<p class="text-center mt-3">
+		    <form action="/bai1/register" method="get" style="display:inline;">
+		        <button type="submit" class="btn btn-link p-0 m-0">Đăng kí</button>
+		    </form>
+	</p>
 </body>
 </html>

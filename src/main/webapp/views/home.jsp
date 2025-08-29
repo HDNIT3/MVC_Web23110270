@@ -8,6 +8,6 @@
 </head>
 <body>
 	<h1>Chào mường đến trang quản lý</h1>
-	
+	<%= request.getParameter("username") %>
 </body>
 </html>

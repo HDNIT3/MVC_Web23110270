@@ -1,6 +1,7 @@
 package vn.iostar.controller;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -19,8 +20,8 @@ public class WaitingController extends HttpServlet {
 		if (session != null && session.getAttribute("account") != null) {
 			User u = (User) session.getAttribute("account");
 			req.setAttribute("username", u.getUserName());
-			if (u.getRoleid() == 1) {
-				resp.sendRedirect(req.getContextPath() + "/views/home.jsp");
+			if (u.getRoleid() != 0) {
+				resp.sendRedirect(req.getContextPath() + "/views/home.jsp?username="+ URLEncoder.encode(u.getUserName(), "UTF-8"));
 			} else if (u.getRoleid() == 2) {
 				resp.sendRedirect(req.getContextPath() + "/manager/home");
 			} else {
